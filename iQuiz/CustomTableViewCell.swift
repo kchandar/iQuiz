@@ -20,5 +20,21 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
+    @IBOutlet weak var cellView: UIView!
+    
+    
+    
+    @IBOutlet weak var quizImage: UIImageView!
+    
+    
+    @IBOutlet weak var quizLabel: UILabel!
+    
+    
+    @IBOutlet weak var quizDescriptionLabel: UILabel!
+    
+    
+    
+    
 }

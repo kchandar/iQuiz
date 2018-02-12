@@ -8,18 +8,55 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let pictureArray:[String] = ["math", "marvel", "science"]
+    let titleArray:[String] = ["Mathematics", "Marvel Superheroes", "Science"]
+    let descriptionArray:[String] = ["Can you pass a simple math quiz?", "How well do you know Superheroes?", "Test your basic science knowledge"]
+    
 
+    @IBAction func settingsButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+        }
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pictureArray.count
     }
-
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+       
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        
+        cell.quizLabel.text = titleArray[indexPath.row]
+        cell.quizDescriptionLabel.text = descriptionArray[indexPath.row]
+        cell.quizImage.image = UIImage(named: pictureArray[indexPath.row])
+        cell.quizImage.layer.cornerRadius = cell.quizImage.frame.height / 2
+        
+        return cell
+    }
+    
 }
 

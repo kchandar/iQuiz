@@ -12,6 +12,7 @@
 		0857D99020316B14001BC1D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0857D98E20316B14001BC1D2 /* Main.storyboard */; };
 		0857D99220316B14001BC1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0857D99120316B14001BC1D2 /* Assets.xcassets */; };
 		0857D99520316B14001BC1D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0857D99320316B14001BC1D2 /* LaunchScreen.storyboard */; };
+		0857D99D20316F7C001BC1D2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0857D99C20316F7C001BC1D2 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0857D99120316B14001BC1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0857D99420316B14001BC1D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0857D99620316B14001BC1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0857D99C20316F7C001BC1D2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				0857D99120316B14001BC1D2 /* Assets.xcassets */,
 				0857D99320316B14001BC1D2 /* LaunchScreen.storyboard */,
 				0857D99620316B14001BC1D2 /* Info.plist */,
+				0857D99C20316F7C001BC1D2 /* CustomTableViewCell.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0857D99D20316F7C001BC1D2 /* CustomTableViewCell.swift in Sources */,
 				0857D98D20316B14001BC1D2 /* ViewController.swift in Sources */,
 				0857D98B20316B14001BC1D2 /* AppDelegate.swift in Sources */,
 			);
