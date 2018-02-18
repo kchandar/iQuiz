@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let marvelAnswers:[Int] = [2, 1]
     
     let scienceQuestions:[String] = ["What element is K?"]
-    let scienceAnswerChoices:[[String]] = [["Karbon", "Pottassium", "Kryptonite"]]
+    let scienceAnswerChoices:[[String]] = [["Karbon", "Pottassium", "Kryptonite", "Iron"]]
     let scienceAnswers:[Int] = [2]
     
 

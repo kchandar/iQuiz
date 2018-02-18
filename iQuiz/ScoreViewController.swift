@@ -10,21 +10,25 @@ import UIKit
 
 class ScoreViewController: UIViewController {
     
+    var total:Int = 0
+    var score:Int = 0
+    var titleString:String = ""
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var total:Int = 0
-    var score:Int = 0
-    var titleString:String = ""
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        titleLabel.text = "Titlee"
+//        scoreLabel.text = "SCORREE"
         // Do any additional setup after loading the view.
-        //titleLabel.text = titleString
-        //scoreLabel.text = "\(score) / \(total)"
+        titleLabel.text = titleString
+        scoreLabel.text = "\(score) / \(total)"
     }
     
     

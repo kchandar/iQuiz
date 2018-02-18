@@ -264,6 +264,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="bjb-dH-ER6"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="aeH-rL-gJK" id="IWK-K2-B36"/>
+                        <outlet property="titleLabel" destination="cIC-xj-45q" id="WJv-Ht-avc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQe-qM-eqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,10 +304,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4lq-fM-tmF"/>
                     </view>
-                    <connections>
-                        <outlet property="scoreLabel" destination="aeH-rL-gJK" id="CLI-U2-QsD"/>
-                        <outlet property="titleLabel" destination="cIC-xj-45q" id="fYZ-4x-vlk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rez-Ua-YcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -314,6 +314,6 @@
         <image name="math" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RL0-3g-6NL"/>
+        <segue reference="hfx-wa-JXo"/>
     </inferredMetricsTieBreakers>
 </document>
