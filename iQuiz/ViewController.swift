@@ -13,6 +13,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let pictureArray:[String] = ["math", "marvel", "science"]
     let titleArray:[String] = ["Mathematics", "Marvel Superheroes", "Science"]
     let descriptionArray:[String] = ["Can you pass a simple math quiz?", "How well do you know Superheroes?", "Test your basic science knowledge"]
+    var myIndex:Int = 0
+    
+    let mathQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
+    let mathAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
+    let mathAnswers:[Int] = [2, 4, 3]
+    
+    let marvelQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
+    let marvelAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
+    let marvelAnswers:[Int] = [2, 4, 3]
+    
+    let scienceQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
+    let scienceAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
+    let scienceAnswers:[Int] = [2, 4, 3]
     
 
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
@@ -58,5 +71,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "showQuiz", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizController = segue.destination as! QuizViewController
+        quizController.titleString = titleArray[myIndex]
+        
+        switch(myIndex + 1) {
+        case 1:
+            quizController.questions = mathQuestions
+            quizController.answerChoices = mathAnswerChoices
+            quizController.correctAnswers = mathAnswers
+            break
+        case 2:
+            quizController.questions = marvelQuestions
+            quizController.answerChoices = marvelAnswerChoices
+            quizController.correctAnswers = marvelAnswers
+            break
+        case 3:
+            quizController.questions = scienceQuestions
+            quizController.answerChoices = scienceAnswerChoices
+            quizController.correctAnswers = scienceAnswers
+            break
+        default:
+            break
+        }
+    }
 }
 
