@@ -23,8 +23,8 @@ class ScoreViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        titleLabel.text = titleString
-        scoreLabel.text = "\(score) / \(total)"
+        //titleLabel.text = titleString
+        //scoreLabel.text = "\(score) / \(total)"
     }
     
     

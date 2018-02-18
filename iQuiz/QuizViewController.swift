@@ -54,7 +54,7 @@ class QuizViewController: UIViewController {
 
 
     @IBAction func onSubmit(_ sender: UIButton) {
-        titleLabel.text = "UserTag = \(userAnswer)"
+        //titleLabel.text = "UserTag = \(userAnswer)"
             if(isQuestion) {
                 let rightAnswer = correctAnswers[currentIndex]
                 
@@ -66,7 +66,6 @@ class QuizViewController: UIViewController {
                 }
                 currentIndex += 1
                 if (rightAnswer != userAnswer) {
-                    questionLabel.text = "Not right answer + \(userAnswer)"
                     switch(userAnswer) {
                     case 1:
                         button1.layer.backgroundColor = UIColor.red.cgColor
@@ -123,7 +122,7 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func chooseAnswer(_ sender: UIButton) {
-        titleLabel.text = "\(sender.tag)"
+        //titleLabel.text = "\(sender.tag)"
         userAnswer = sender.tag
     }
     

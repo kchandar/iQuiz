@@ -19,13 +19,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let mathAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
     let mathAnswers:[Int] = [2, 4, 3]
     
-    let marvelQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
-    let marvelAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
-    let marvelAnswers:[Int] = [2, 4, 3]
+    let marvelQuestions:[String] = ["Who is Superman?", "What animal does Antman turn into?"]
+    let marvelAnswerChoices:[[String]] = [["John", "Clark Kent", "Iron Man", "Waldo"], ["Ant", "Beetle", "Aunt Mary", "Trick Question"]]
+    let marvelAnswers:[Int] = [2, 1]
     
-    let scienceQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
-    let scienceAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
-    let scienceAnswers:[Int] = [2, 4, 3]
+    let scienceQuestions:[String] = ["What element is K?"]
+    let scienceAnswerChoices:[[String]] = [["Karbon", "Pottassium", "Kryptonite"]]
+    let scienceAnswers:[Int] = [2]
     
 
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
