@@ -127,10 +127,10 @@ class QuizViewController: UIViewController {
     }
     
     public func clearAnswers() {
-        button1.layer.backgroundColor = UIColor.gray.cgColor
-        button2.layer.backgroundColor = UIColor.gray.cgColor
-        button3.layer.backgroundColor = UIColor.gray.cgColor
-        button4.layer.backgroundColor = UIColor.gray.cgColor
+        button1.layer.backgroundColor = UIColor.white.cgColor
+        button2.layer.backgroundColor = UIColor.white.cgColor
+        button3.layer.backgroundColor = UIColor.white.cgColor
+        button4.layer.backgroundColor = UIColor.white.cgColor
         loadQuiz()
     }
     
