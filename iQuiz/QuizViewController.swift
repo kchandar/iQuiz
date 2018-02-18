@@ -123,6 +123,11 @@ class QuizViewController: UIViewController {
     
     @IBAction func chooseAnswer(_ sender: UIButton) {
         //titleLabel.text = "\(sender.tag)"
+        button1.layer.borderColor = UIColor.black.cgColor
+        button2.layer.borderColor = UIColor.black.cgColor
+        button3.layer.borderColor = UIColor.black.cgColor
+        button4.layer.borderColor = UIColor.black.cgColor
+        sender.layer.borderColor = UIColor.blue.cgColor
         userAnswer = sender.tag
     }
     
@@ -131,6 +136,10 @@ class QuizViewController: UIViewController {
         button2.layer.backgroundColor = UIColor.white.cgColor
         button3.layer.backgroundColor = UIColor.white.cgColor
         button4.layer.backgroundColor = UIColor.white.cgColor
+        button1.layer.borderColor = UIColor.black.cgColor
+        button2.layer.borderColor = UIColor.black.cgColor
+        button3.layer.borderColor = UIColor.black.cgColor
+        button4.layer.borderColor = UIColor.black.cgColor
         loadQuiz()
     }
     
