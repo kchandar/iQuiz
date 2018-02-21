@@ -22,18 +22,78 @@ class Question {
     }
 }
 
-class QuestionFactory {
-        
-    private var questions:[String:[Question]] = ["math":[Question(question:"2 + 2 = ?", answers:["3", "4", "0", "9"], rightAnswer:2), Question(question:"9 * 3 = ?", answers:["6", "36", "12", "27"], rightAnswer:4), Question(question:"5 + 16 = ?", answers:["19", "20", "21", "22"], rightAnswer:3)], "marvel":[Question(question:"Who is Superman?", answers:["John", "Clark Kent", "Iron Man", "Waldo"], rightAnswer:2), Question(question:"What animal does Antman turn into?", answers:["Ant", "Beetle", "Aunt Mary", "Trick Question"], rightAnswer:1)], "science":[Question(question:"What element is K?", answers:["Karbon", "Pottassium", "Kryptonite", "Iron"], rightAnswer:2)]]
+class QuizFactory {
+    
+    private var questions:[String: [Question]] = [String: [Question]]()
+    private var descriptions: [String:String] = [String: String]()
+    var titles: [String] = [String]()
     
     public func getQuestions(topic:String) -> [Question] {
-        return self.questions[topic]!
+        if (self.questions[topic] != nil) {
+            return self.questions[topic]!
+        }
+        return []
     }
     
-    public func changeAnswer(questions:[Question], topic:String, index:Int, userAnswer:Int) -> [Question] {
-        questions[index].userAnswer = userAnswer
-        self.questions[topic]![index].userAnswer = userAnswer
-        return questions
-        
+    public func getDescription(topic:String) -> String {
+        if (self.descriptions[topic] != nil) {
+            return self.descriptions[topic]!
+        }
+        return ""
     }
+    
+    public func addQuestions(topic:String, question:Question) {
+        if questions[topic] == nil {
+            questions[topic] = [question]
+        } else {
+            var qs:[Question] = questions[topic]!
+            qs.append(question)
+            questions[topic] = qs
+        }
+    }
+    
+    public func setDescription(topic:String, desc:String) {
+        descriptions[topic] = desc
+    }
+    
+    public func addTitle(topic:String) {
+        titles.append(topic)
+    }
+    
+    public func setDescriptions(descriptions:[String:String]) {
+        self.descriptions = descriptions
+    }
+    
+    public func setTitles(titles:[String]) {
+        self.titles = titles
+    }
+    
+    public func setQuestions(questions:[String: [Question]]) {
+        self.questions = questions
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

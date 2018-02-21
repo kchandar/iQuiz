@@ -139,9 +139,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZm-ww-R42">
-                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZm-ww-R42">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Home" id="hdF-k6-Dry">
                                         <connections>
@@ -212,6 +211,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rC3-tL-mbe" firstAttribute="trailing" secondItem="MZm-ww-R42" secondAttribute="trailing" id="KKI-SH-K52"/>
+                            <constraint firstItem="MZm-ww-R42" firstAttribute="top" secondItem="rC3-tL-mbe" secondAttribute="top" id="gBr-rk-jTR"/>
+                            <constraint firstItem="rC3-tL-mbe" firstAttribute="leading" secondItem="MZm-ww-R42" secondAttribute="leading" id="lNE-hQ-Xq2"/>
+                            <constraint firstItem="rC3-tL-mbe" firstAttribute="top" secondItem="MZm-ww-R42" secondAttribute="top" id="v4F-c2-dYw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rC3-tL-mbe"/>
                     </view>
                     <connections>
@@ -289,9 +294,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LcP-61-g9k">
-                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcP-61-g9k">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem title="Home" id="yoL-qq-wZn" customClass="goHome">
                                         <connections>
@@ -376,6 +380,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4lq-fM-tmF" firstAttribute="trailing" secondItem="LcP-61-g9k" secondAttribute="trailing" id="6sW-7X-cHi"/>
+                            <constraint firstItem="4lq-fM-tmF" firstAttribute="leading" secondItem="LcP-61-g9k" secondAttribute="leading" id="K1s-wP-pzD"/>
+                            <constraint firstItem="4lq-fM-tmF" firstAttribute="top" secondItem="LcP-61-g9k" secondAttribute="top" id="gfh-TP-TKV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4lq-fM-tmF"/>
                     </view>
                     <connections>
@@ -399,7 +408,8 @@
         <image name="math" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="orB-dg-mbk"/>
-        <segue reference="yrA-1h-bNz"/>
+        <segue reference="D06-86-022"/>
+        <segue reference="cGH-6j-VmR"/>
+        <segue reference="oAK-gq-G4R"/>
     </inferredMetricsTieBreakers>
 </document>
