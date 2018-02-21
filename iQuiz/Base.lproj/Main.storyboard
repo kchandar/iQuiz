@@ -145,7 +145,7 @@
                                 <items>
                                     <barButtonItem title="Home" id="hdF-k6-Dry">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" animates="NO" id="Tyf-1w-VPa"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="oAK-gq-G4R"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -222,12 +222,12 @@
                         <outlet property="questionLabel" destination="41L-fZ-h2e" id="y6M-be-Ixo"/>
                         <outlet property="submitButton" destination="WmH-nV-a5m" id="iL3-F4-dDd"/>
                         <outlet property="titleLabel" destination="aJN-59-bMN" id="BH3-88-Hqj"/>
-                        <segue destination="ZNe-by-l1m" kind="show" identifier="showScore" id="3hE-CJ-Tlg"/>
+                        <segue destination="pZT-Sb-Zyt" kind="showDetail" identifier="showAnswer" animates="NO" action="showViewController:sender:" id="D06-86-022"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="366-qE-dGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840.79999999999995" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1217" y="132"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="3Y0-bZ-Skf">
@@ -243,20 +243,27 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="goHome:" destination="pZT-Sb-Zyt" eventType="touchUpInside" id="fFA-AV-LVv"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="hfx-wa-JXo"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="2hH-AV-vCc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeH-rL-gJK">
-                                <rect key="frame" x="0.0" y="113" width="375" height="412"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-xj-45q">
+                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-xj-45q">
-                                <rect key="frame" x="0.0" y="56" width="375" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3g-j7-M2C">
+                                <rect key="frame" x="0.0" y="285" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeH-rL-gJK">
+                                <rect key="frame" x="0.0" y="180" width="375" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -265,18 +272,19 @@
                         <viewLayoutGuide key="safeArea" id="bjb-dH-ER6"/>
                     </view>
                     <connections>
+                        <outlet property="descLabel" destination="O3g-j7-M2C" id="hZX-Es-RSX"/>
                         <outlet property="scoreLabel" destination="aeH-rL-gJK" id="IWK-K2-B36"/>
                         <outlet property="titleLabel" destination="cIC-xj-45q" id="WJv-Ht-avc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQe-qM-eqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="928"/>
+            <point key="canvasLocation" x="134" y="954"/>
         </scene>
-        <!--Score View Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="9DG-og-5G7">
             <objects>
-                <viewController id="pZT-Sb-Zyt" customClass="ScoreViewController" sceneMemberID="viewController">
+                <viewController id="pZT-Sb-Zyt" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="myw-lx-Ht4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,7 +295,7 @@
                                 <items>
                                     <barButtonItem title="Home" id="yoL-qq-wZn" customClass="goHome">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="RL0-3g-6NL"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="yrA-1h-bNz"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -295,25 +303,103 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-dk-zOO">
                                 <rect key="frame" x="116" y="604" width="142" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="goHome:" destination="pZT-Sb-Zyt" eventType="touchUpInside" id="rb7-JZ-1td"/>
+                                    <action selector="onNextClick:" destination="pZT-Sb-Zyt" eventType="touchUpInside" id="yeC-C5-i3h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GH-N0-4y6">
+                                <rect key="frame" x="0.0" y="60" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0z-Bp-o00">
+                                <rect key="frame" x="0.0" y="117" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-Ip-3SZ">
+                                <rect key="frame" x="16" y="242" width="343" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseAnswer:" destination="Ixn-BM-d2G" eventType="touchUpInside" id="0Gn-hd-Oo2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4k-wV-VeK">
+                                <rect key="frame" x="16" y="320" width="343" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseAnswer:" destination="Ixn-BM-d2G" eventType="touchUpInside" id="qi0-B8-Z7T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-Ym-Tcl">
+                                <rect key="frame" x="16" y="398" width="343" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseAnswer:" destination="Ixn-BM-d2G" eventType="touchUpInside" id="sqw-DT-P4Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-qf-m6G">
+                                <rect key="frame" x="16" y="476" width="343" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseAnswer:" destination="Ixn-BM-d2G" eventType="touchUpInside" id="hFV-bV-Ois"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4lq-fM-tmF"/>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="yl3-Ip-3SZ" id="CEs-Vr-a7W"/>
+                        <outlet property="button2" destination="q4k-wV-VeK" id="hm2-Gl-Bb1"/>
+                        <outlet property="button3" destination="kNY-Ym-Tcl" id="3g5-GB-mBq"/>
+                        <outlet property="button4" destination="eGb-qf-m6G" id="aUy-LK-jJR"/>
+                        <outlet property="nextButton" destination="b6x-dk-zOO" id="cQq-Zs-LwI"/>
+                        <outlet property="questionLabel" destination="j0z-Bp-o00" id="VGw-TP-fDb"/>
+                        <outlet property="titleLabel" destination="1GH-N0-4y6" id="xCn-6K-VM1"/>
+                        <segue destination="Ixn-BM-d2G" kind="showDetail" identifier="goBackToQuiz" animates="NO" action="showViewController:sender:" id="cGH-6j-VmR"/>
+                        <segue destination="ZNe-by-l1m" kind="showDetail" identifier="showScore" action="showViewController:sender:" id="BP7-Ox-YSM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rez-Ua-YcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="132"/>
+            <point key="canvasLocation" x="1217" y="954"/>
         </scene>
     </scenes>
     <resources>
         <image name="math" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hfx-wa-JXo"/>
+        <segue reference="orB-dg-mbk"/>
+        <segue reference="yrA-1h-bNz"/>
     </inferredMetricsTieBreakers>
 </document>

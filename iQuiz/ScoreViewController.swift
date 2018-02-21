@@ -17,20 +17,25 @@ class ScoreViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
     
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        titleLabel.text = "Titlee"
-//        scoreLabel.text = "SCORREE"
-        // Do any additional setup after loading the view.
         titleLabel.text = titleString
-        
-        
-        scoreLabel.text = "Good job! \(score) / \(total)"
+        let scoreText:String = "\(score) / \(total)"
+        var descText:String = ""
+        if( score == 0) {
+            descText = "You need some work!"
+        } else if (score == total) {
+            descText = "Perfect!"
+        } else {
+            descText = "Almost!"
+        }
+        scoreLabel.text = scoreText
+        descLabel.text = descText
     }
     
     

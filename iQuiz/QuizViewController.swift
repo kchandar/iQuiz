@@ -10,18 +10,10 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
-    var titleString:String = ""
-    var questions:[String] = [""]
-    var answerChoices:[[String]] = [[""]]
-    var correctAnswers:[Int] = [-1]
-    var totalQuestions:Int = 0
-    var totalScore:Int = 0
-    var currentIndex:Int = 0
-    var userAnswer:Int = 0
-    var isQuestion:Bool = true
-    
+    var userAnswer:Int = -1
+    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions:[])
 
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -37,13 +29,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(questions)
-        titleLabel.text = titleString
-        totalQuestions = questions.count
         loadQuiz()
     }
 
@@ -54,80 +41,29 @@ class QuizViewController: UIViewController {
 
 
     @IBAction func onSubmit(_ sender: UIButton) {
-        //titleLabel.text = "UserTag = \(userAnswer)"
-            if(isQuestion) {
-                let rightAnswer = correctAnswers[currentIndex]
-                
-                if(currentIndex < totalQuestions) {
-                    clearAnswers()
-                    submitButton.setTitle("Next", for: .normal)
-                } else {
-                    submitButton.setTitle("See My Score", for: .normal)
-                }
-                currentIndex += 1
-                if (rightAnswer != userAnswer) {
-                    switch(userAnswer) {
-                    case 1:
-                        button1.layer.backgroundColor = UIColor.red.cgColor
-                        break
-                    case 2:
-                        button2.layer.backgroundColor = UIColor.red.cgColor
-                        break
-                    case 3:
-                        button3.layer.backgroundColor = UIColor.red.cgColor
-                        break
-                    case 4:
-                        button4.layer.backgroundColor = UIColor.red.cgColor
-                        break
-                    default:
-                        break
-                    }
-                } else {
-                    totalScore += 1
-                }
-                switch(rightAnswer) {
-                    case 1:
-                        button1.layer.backgroundColor = UIColor.green.cgColor
-                        break
-                    case 2:
-                        button2.layer.backgroundColor = UIColor.green.cgColor
-                        break
-                    case 3:
-                        button3.layer.backgroundColor = UIColor.green.cgColor
-                        break
-                    case 4:
-                        button4.layer.backgroundColor = UIColor.green.cgColor
-                        break
-                    default:
-                        break
-                    }
-                    isQuestion = false
-            } else {
-                isQuestion = true
-                if(currentIndex < totalQuestions) {
-                    clearAnswers()
-                    submitButton.setTitle("Submit", for: .normal)
-                } else {
-                    performSegue(withIdentifier: "showScore", sender: self)
-                }
+        if(userAnswer != -1) {
+            let rightAnswer = currentQuiz.getCurrentRightAnswer()
+            if(userAnswer == rightAnswer) {
+                currentQuiz.incrementTotalScore()
             }
-        
+            performSegue(withIdentifier: "showAnswer", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let scoreController = segue.destination as! ScoreViewController
-        scoreController.titleString = titleString
-        scoreController.total = totalQuestions
-        scoreController.score = totalScore
+        if(segue.identifier == "showAnswer") {
+            let answerController = segue.destination as! AnswerViewController
+            answerController.currentQuiz = currentQuiz
+        }
     }
     
     @IBAction func chooseAnswer(_ sender: UIButton) {
-        //titleLabel.text = "\(sender.tag)"
         button1.layer.borderColor = UIColor.black.cgColor
         button2.layer.borderColor = UIColor.black.cgColor
         button3.layer.borderColor = UIColor.black.cgColor
         button4.layer.borderColor = UIColor.black.cgColor
         sender.layer.borderColor = UIColor.blue.cgColor
+        currentQuiz.setCurrentUserAnswer(sender.tag)
         userAnswer = sender.tag
     }
     
@@ -145,22 +81,13 @@ class QuizViewController: UIViewController {
     
     
     public func loadQuiz() {
-        questionLabel.text = questions[currentIndex]
-        button1.setTitle(answerChoices[currentIndex][0], for: .normal)
-        button2.setTitle(answerChoices[currentIndex][1], for: .normal)
-        button3.setTitle(answerChoices[currentIndex][2], for: .normal)
-        button4.setTitle(answerChoices[currentIndex][3], for: .normal)
+        titleLabel.text = currentQuiz.title
+        questionLabel.text = currentQuiz.questions[currentQuiz.currentIndex].question
+        let answers:[String] = currentQuiz.getCurrentAnswers()
+        button1.setTitle(answers[0], for: .normal)
+        button2.setTitle(answers[1], for: .normal)
+        button3.setTitle(answers[2], for: .normal)
+        button4.setTitle(answers[3], for: .normal)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

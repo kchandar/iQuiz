@@ -14,19 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let titleArray:[String] = ["Mathematics", "Marvel Superheroes", "Science"]
     let descriptionArray:[String] = ["Can you pass a simple math quiz?", "How well do you know Superheroes?", "Test your basic science knowledge"]
     var myIndex:Int = 0
-    
-    let mathQuestions:[String] = ["2 + 2 = ?", "9 * 3 = ?", "5 + 16 = ?"]
-    let mathAnswerChoices:[[String]] = [["3", "4", "0", "9"], ["6", "36", "12", "27"], ["19", "20", "21", "22"]]
-    let mathAnswers:[Int] = [2, 4, 3]
-    
-    let marvelQuestions:[String] = ["Who is Superman?", "What animal does Antman turn into?"]
-    let marvelAnswerChoices:[[String]] = [["John", "Clark Kent", "Iron Man", "Waldo"], ["Ant", "Beetle", "Aunt Mary", "Trick Question"]]
-    let marvelAnswers:[Int] = [2, 1]
-    
-    let scienceQuestions:[String] = ["What element is K?"]
-    let scienceAnswerChoices:[[String]] = [["Karbon", "Pottassium", "Kryptonite", "Iron"]]
-    let scienceAnswers:[Int] = [2]
-    
 
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .alert)
@@ -78,27 +65,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizController = segue.destination as! QuizViewController
-        quizController.titleString = titleArray[myIndex]
-        
-        switch(myIndex + 1) {
-        case 1:
-            quizController.questions = mathQuestions
-            quizController.answerChoices = mathAnswerChoices
-            quizController.correctAnswers = mathAnswers
-            break
-        case 2:
-            quizController.questions = marvelQuestions
-            quizController.answerChoices = marvelAnswerChoices
-            quizController.correctAnswers = marvelAnswers
-            break
-        case 3:
-            quizController.questions = scienceQuestions
-            quizController.answerChoices = scienceAnswerChoices
-            quizController.correctAnswers = scienceAnswers
-            break
-        default:
-            break
-        }
+        let questions:[Question] = QuestionFactory().getQuestions(topic: pictureArray[myIndex])
+        let currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: titleArray[myIndex], questions: questions)
+        quizController.currentQuiz = currentQuiz
     }
 }
 
