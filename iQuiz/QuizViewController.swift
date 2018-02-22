@@ -11,7 +11,7 @@ import UIKit
 class QuizViewController: UIViewController {
     
     var userAnswer:Int = -1
-    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions:[])
+    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions:[], factory: QuizFactory())
 
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -54,6 +54,9 @@ class QuizViewController: UIViewController {
         if(segue.identifier == "showAnswer") {
             let answerController = segue.destination as! AnswerViewController
             answerController.currentQuiz = currentQuiz
+        } else if(segue.identifier == "goHome") {
+            let controller = segue.destination as! ViewController
+            controller.tempFactory = currentQuiz.factory
         }
     }
     
@@ -62,7 +65,7 @@ class QuizViewController: UIViewController {
         button2.layer.borderColor = UIColor.black.cgColor
         button3.layer.borderColor = UIColor.black.cgColor
         button4.layer.borderColor = UIColor.black.cgColor
-        sender.layer.borderColor = UIColor.blue.cgColor
+        sender.layer.borderColor = UIColor.purple.cgColor
         currentQuiz.setCurrentUserAnswer(sender.tag)
         userAnswer = sender.tag
     }

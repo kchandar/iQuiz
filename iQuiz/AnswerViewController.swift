@@ -10,7 +10,7 @@ import UIKit
 
 class AnswerViewController: UIViewController {
     
-    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions:[])
+    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions:[], factory: QuizFactory())
  
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -107,10 +107,15 @@ class AnswerViewController: UIViewController {
             scoreController.titleString = currentQuiz.title
             scoreController.total = currentQuiz.questions.count
             scoreController.score = currentQuiz.totalScore
+            scoreController.currentQuiz = currentQuiz
             break
         case "goBackToQuiz"?:
             let quizController = segue.destination as! QuizViewController
             quizController.currentQuiz = currentQuiz
+            break
+        case "goHome"?:
+            let controller = segue.destination as! ViewController
+            controller.tempFactory = currentQuiz.factory
             break
         default:
             break

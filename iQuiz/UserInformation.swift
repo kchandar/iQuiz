@@ -13,12 +13,14 @@ class CurrentQuizInformation {
     var questions:[Question]
     var totalScore:Int
     var title:String
+    var factory:QuizFactory
     
-    init(title:String, questions:[Question]) {
+    init(title:String, questions:[Question], factory:QuizFactory) {
         self.currentIndex = 0
         self.totalScore = 0
         self.questions = questions
         self.title = title
+        self.factory = factory
     }
     
     public func incrementIndex() {

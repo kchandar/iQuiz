@@ -27,6 +27,15 @@ class QuizFactory {
     private var questions:[String: [Question]] = [String: [Question]]()
     private var descriptions: [String:String] = [String: String]()
     var titles: [String] = [String]()
+    var link:String = ""
+    
+    init(questions:[String: [Question]] = [String: [Question]](), descriptions:[String:String] = [String: String](), titles:[String] = [String](), link:String = "") {
+        self.questions = questions
+        self.descriptions = descriptions
+        self.titles = titles
+        self.link = link
+        
+    }
     
     public func getQuestions(topic:String) -> [Question] {
         if (self.questions[topic] != nil) {

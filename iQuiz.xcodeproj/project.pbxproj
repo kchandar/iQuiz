@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080626F1203DF43900CB8349 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080626F0203DF43900CB8349 /* SettingsViewController.swift */; };
+		080626F3203E84E000CB8349 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080626F2203E84E000CB8349 /* NetworkCheck.swift */; };
 		084854E72038D4BA00780565 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084854E62038D4BA00780565 /* QuizViewController.swift */; };
 		084854E92038DF1300780565 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084854E82038DF1300780565 /* ScoreViewController.swift */; };
 		084854ED203CA3C800780565 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084854EC203CA3C800780565 /* AnswerViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080626F0203DF43900CB8349 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		080626F2203E84E000CB8349 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		084854E62038D4BA00780565 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		084854E82038DF1300780565 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		084854EC203CA3C800780565 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		0857D98920316B13001BC1D2 /* iQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				080626F0203DF43900CB8349 /* SettingsViewController.swift */,
+				080626F2203E84E000CB8349 /* NetworkCheck.swift */,
 				084854F0203D152000780565 /* UserInformation.swift */,
 				084854EE203CEAB400780565 /* Question.swift */,
 				084854EC203CA3C800780565 /* AnswerViewController.swift */,
@@ -155,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				084854ED203CA3C800780565 /* AnswerViewController.swift in Sources */,
+				080626F3203E84E000CB8349 /* NetworkCheck.swift in Sources */,
 				0857D99D20316F7C001BC1D2 /* CustomTableViewCell.swift in Sources */,
 				0857D98D20316B14001BC1D2 /* ViewController.swift in Sources */,
 				084854E92038DF1300780565 /* ScoreViewController.swift in Sources */,
@@ -162,6 +169,7 @@
 				084854F1203D152000780565 /* UserInformation.swift in Sources */,
 				084854EF203CEAB400780565 /* Question.swift in Sources */,
 				084854E72038D4BA00780565 /* QuizViewController.swift in Sources */,
+				080626F1203DF43900CB8349 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

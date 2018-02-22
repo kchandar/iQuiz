@@ -13,26 +13,28 @@ class ScoreViewController: UIViewController {
     var total:Int = 0
     var score:Int = 0
     var titleString:String = ""
+    var currentQuiz:CurrentQuizInformation = CurrentQuizInformation(title: "", questions: [], factory: QuizFactory())
     
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = titleString
+        let percentage:Double = Double(score) / Double(total)
         let scoreText:String = "\(score) / \(total)"
         var descText:String = ""
-        if( score == 0) {
-            descText = "You need some work!"
-        } else if (score == total) {
-            descText = "Perfect!"
-        } else {
-            descText = "Almost!"
+        if(percentage == 0) {
+            descText = "Try harder next time D:"
+        } else if percentage < 0.5 {
+            descText = "Not absolutely terrible..."
+        } else if percentage < 0.75 {
+            descText = "So close!"
+        } else if percentage == 1 {
+            descText = "Amazing!"
         }
         scoreLabel.text = scoreText
         descLabel.text = descText
@@ -42,6 +44,14 @@ class ScoreViewController: UIViewController {
     @IBAction func goHome(_ sender: UIButton) {
         performSegue(withIdentifier: "goHome", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goHome" {
+            let controller = segue.destination as! ViewController
+            controller.tempFactory = currentQuiz.factory
+        }
+    }
+    
     
 
     override func didReceiveMemoryWarning() {
